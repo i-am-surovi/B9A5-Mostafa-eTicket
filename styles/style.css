@@ -1,9 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-
-.font-raleway{
-    font-family:"Raleway", sans-serif;
-}
-
-.font-inter{
-    font-family:"Inter", sans-serif;
+.background-banner{
+    background-image: url('assets/banner.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

@@ -3,67 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostafa E-ticket</title>
 
-    <!-- Tailwind and DaisyUI -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Style sheet -->
-    <link rel="stylesheet" href="styles/style.css">
+    <!-- Raleway font -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/c4d3f731ad.js" crossorigin="anonymous"></script>
 
-    <!-- icon -->
-    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+    <!-- Daisy UI and Tailwind CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <title>Mostafa E-Ticket</title>
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: '#1dd100',
+                secondary: '#030712',
+                couponOne: '#ffbf0f',
+                couponTwo: '#f78c9c',
+                mobileMenu: '#f7f8f8',
+                body: '#03071299',
+                buttonColor: 'rgba(29, 209, 0, 0.15)',
+              },
+
+                fontFamily: {
+                    RaleWay: 'Raleway',
+                    Inter: 'Inter',
+                },
+            },
+          },
+        }
+      </script>
 </head>
 
-
-<body class="font-raleway">
-    <head>
-        <!-- navbar section -->
-        <div class="navbar bg-base-100 px-3 lg:px-20">
-            <div class="nav-start">
-                <div class="dropdown">
-                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h8m-8 6h16" />
-                        </svg>
-                    </div>
-
-                    <!-- For Mobile Version -->
-                    <ul tabindex="0"
-                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-sm font-medium">
-                        <li><a>Home</a></li>
-                        <li><a>About</a></li>
-                        <li><a>Destination</a></li>
-                        <li><a>Search</a></li>
-                    </ul>
-                </div>
-                <a class="text-xl lg:text-3xl font-extrabold">Mostafa e-Ticket</a>
+<body class="font-RaleWay scroll-smooth">
+    <!-- Header Section content -->
+    <header class="w-11/12 mx-auto">
+        <!-- Navigation Menu Content -->
+        <nav class="flex justify-between items-center py-2 relative">
+            <div class="flex sm:justify-start gap-2 justify-center items-center sm:text-2xl text-xl font-extrabold capitalize text-black">
+                <span>Mostafa E-ticket</span>
             </div>
-
-            <!-- For Large Screen -->
-            <div class="navbar-center hidden lg:flex">
-                <ul class="menu menu-horizontal px-1">
-                    <li><a>Home</a></li>
-                    <li><a>About</a></li>
-                    <li><a>Destination</a></li>
-                    <li><a>Search</a></li>
-                </ul>
+            <ul class="sm:flex hidden gap-8">
+                <li>
+                    <a class="font-semibold text-lg text-primary transition-colors duration-200 ease-in-out"
+                        href="#">Home</a>
+                </li>
+                <li>
+                    <a class="font-semibold text-lg hover:text-primary transition-colors duration-200 ease-in-out" href="#about-mz">About</a>
+                </li>
+                <li>
+                    <a class="font-semibold text-lg hover:text-primary transition-colors duration-200 ease-in-out"
+                        href="#destination">Destination</a>
+                </li>
+                <li>
+                    <a class="font-semibold text-lg hover:text-primary transition-colors duration-200 ease-in-out"
+                        href="#">Search</a>
+                </li>
+            </ul>
+            <div class="flex items-center gap-8">
+                <a href="#bus"
+                    class="btn btn-primary bg-primary text-secondary border-primary hover:border-primary hover:text-primary hover:bg-transparent">
+                    <span>Bus</span>
+                    <i class="fa-solid fa-van-shuttle"></i>
+                </a>
+                <button id="menu-btn" class="sm:hidden block">
+                    <i class="fa-solid fa-bars sm:hidden block text-2xl bg-primary px-3 py-2 rounded"></i>
+                    <i id="close-icon"
+                        class="fa-solid fa-xmark sm:block hidden text-2xl bg-primary px-3 py-2 rounded"></i>
+                </button>
             </div>
-            
-            <div class="nav-end">
-                <a href="#ticket-selection"
-                    class="btn text-[#1DD100] border-solid border-[#26ec26] bg-[#1dd1001a] text-sm font-bold">Bus <i
-                        class="fa-solid fa-van-shuttle"></i></a>
-        </div>
+            <ul id="mobileMenu"
+                class="hidden flex-col absolute top-16 p-5 shadow-lg rounded-2xl bg-slate-200 text-center w-full mx-auto z-50">
+                <li class="hover:bg-primary py-2 rounded text-primary hover:text-secondary w-full">
+                    <a class="font-semibold text-lg transition-colors duration-200 ease-in-out" href="#">Home</a>
+                </li>
+                <li class="hover:bg-primary py-2 rounded hover:text-secondary w-full">
+                    <a class="font-semibold text-lg transition-colors duration-200 ease-in-out" href="#">About Us</a>
+                </li>
+                <li class="hover:bg-primary py-2 rounded hover:text-secondary w-full">
+                    <a class="font-semibold text-lg transition-colors duration-200 ease-in-out" href="#">Destination</a>
+                </li>
+                <li class="hover:bg-primary py-2 rounded hover:text-secondary w-full">
+                    <a class="font-semibold text-lg transition-colors duration-200 ease-in-out" href="#">Search</a>
+                </li>
+                <li class="hover:bg-primary py-2 rounded hover:text-secondary w-full">
+                    <a class="font-semibold text-lg transition-colors duration-200 ease-in-out" href="#">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
 
-        
-    </head>
 </body>
 </html>
