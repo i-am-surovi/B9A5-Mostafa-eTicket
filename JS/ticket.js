@@ -88,12 +88,12 @@ document.getElementById('coupon-btn').addEventListener('click', function(){
     let couponSave = 0;
     const couponFieldValue = couponInput.value;
 
-    if(couponFieldValue !== "NEW50" && couponFieldValue !== "Couple 20"){
+    if(couponFieldValue !== "NEW15" && couponFieldValue !== "Couple 20"){
         alert('Your provided coupon is not valid!');
         return;
     }
 
-    if(couponFieldValue === 'NEW50'){
+    if(couponFieldValue === 'NEW15'){
         couponSave = totalPrice * .15;
     }
 
