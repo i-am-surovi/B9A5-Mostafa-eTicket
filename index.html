@@ -318,7 +318,7 @@
             
             <!-- Seat Booking Section -->
 
-            <section id="seat-book" class="bg-white px-8 py-5 w-11/12 mx-auto rounded-2xl shadow-sm grid lg:grid-cols-3 grid-cols-1 gap-5">
+            <section id="seat-book" class="bg-white px-8 py-5 w-11/12 mx-auto my-auto rounded-2xl shadow-sm grid lg:grid-cols-3 grid-cols-1 gap-5">
 
                 <div class="col-span-2">
                     <div class="sm:text-left text-center">
@@ -354,7 +354,7 @@
                         <!-- Row 1 -->
                         
                         <p class="col-span-1">A</p>
-                        <div class="col-span-11 grid grid-cols-10 sm:gap-16 gap-8 items-center text-center">
+                        <div class="col-span-11 grid grid-cols-10 sm:gap-16 gap-5 items-center text-center">
                             <button id="seats" onclick="selectSeat(this)" class="col-span-2 btn btn-md hover:bg-secondary hover:text-white transition-colors duration-200 ease-in-out">A1</button>
                             <button id="seats" onclick="selectSeat(this)" class="col-span-2 btn btn-md hover:bg-secondary hover:text-white transition-colors duration-200 ease-in-out">A2</button>
                             <p onclick="selectSeat(this)" class="col-span-2"></p>
@@ -521,21 +521,21 @@
                         <div class="label">
                           <span class="label-text font-bold text-base">Passenger Name*</span>
                         </div>
-                        <input id="name-passenger" type="text" placeholder="Enter your name" class="input input-bordered w-full" disabled/>
+                        <input id="name-passenger" type="text" placeholder="Enter your name" class="input input-bordered w-full"/>
                       </label>
 
                         <label class="form-control w-full my-3">
                           <div class="label">
                             <span class="label-text font-bold text-base">Phone Number*</span>
                           </div>
-                          <input id="phone-number" type="number" placeholder="Enter your phone number" class="input input-bordered w-full" disabled/>
+                          <input id="phone-number" type="number" placeholder="Enter your phone number" class="input input-bordered w-full"/>
                         </label>
 
                     <label class="form-control w-full my-3">
                         <div class="label">
                           <span class="label-text font-bold text-base">Email ID</span>
                         </div>
-                        <input id="email-address" type="email" placeholder=" Enter your email id" class="input input-bordered w-full" disabled/>
+                        <input id="email-address" type="email" placeholder=" Enter your email id" class="input input-bordered w-full"/>
                     </label>
 
                     <button id="next-btn" onclick="my_modal_1.showModal()" class="btn bg-primary text-lg text-white w-full uppercase" disabled>Next</button>

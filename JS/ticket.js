@@ -14,6 +14,7 @@ const nextBtn = document.getElementById('next-btn');
 const passengerName = document.getElementById('name-passenger');
 const phoneNumber = document.getElementById('phone-number');
 const emailAddress = document.getElementById('email-address');
+const seat = document.getElementById('seats')
 
 // Click menu
 
@@ -30,10 +31,15 @@ menuBtn.addEventListener('click', function(){
 
 let seatName = [];
 let totalPrice = 0;
+let grandTotalValue = 0
 
 function selectSeat(event){
 
     let value = event.innerText;
+
+    seat.addEventListener('click',function(){
+        passengerName.removeAttribute('disabled');
+    });
 
     if(seatName.includes(value)){
         return alert('Seat already booked!');
@@ -45,6 +51,7 @@ function selectSeat(event){
     
         seatName.push(event.innerText);
         total_ticket_booked.innerText = seatName.length;
+        
     
         // Decrease available seat
     
@@ -67,6 +74,8 @@ function selectSeat(event){
         // Update total price
     
         totalPrice += 550;
+        grandTotalValue = totalPrice
+        grand_total.innerText=grandTotalValue.toFixed(2);
         total_price.innerText = totalPrice.toFixed(2);
     
         // Active Coupon content
