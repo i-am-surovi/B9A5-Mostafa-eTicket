@@ -127,7 +127,7 @@ document.getElementById('coupon-btn').addEventListener('click', function(){
 
 phoneNumber.addEventListener('keyup', function(event){
     const inputValue = event.target.value;
-    if(inputValue.length >= 11){
+    if(inputValue.length >= 11 && grandTotalValue!==0){
         nextBtn.removeAttribute('disabled');
     }
 });
